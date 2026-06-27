@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BotVerse - Best Tools & Templates</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+</head>
+<body onclick="handleGlobalClick(event)">
+
+    <div id="site-loader"><div class="site-spinner"></div></div>
+
+    <!-- Interstitial Ad -->
+    <div id="interstitial-ad">
+        <div class="ad-content">
+            <div onclick="closeAd()" class="close-ad-btn">&times;</div>
+            <a href="#" id="ad-link" target="_blank"><img id="ad-image" src="" alt="Ad"></a>
+            <div class="ad-footer">
+                <button onclick="closeAd()">Continue to Content</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <div class="sidebar-header">BOTVERSE MENU <div class="close-btn" onclick="toggleNav()">&times;</div></div>
+        <a onclick="showCategory('all')"><i class="fas fa-home"></i> Home</a>
+        <a onclick="showCategory('videos')"><i class="fas fa-video"></i> Video Templates</a>
+        <a onclick="showCategory('apps')"><i class="fas fa-mobile-alt"></i> Android Apps</a>
+        <a onclick="showCategory('presets')"><i class="fas fa-camera-retro"></i> Lightroom Presets</a>
+        <a onclick="showCategory('prompts')"><i class="fas fa-robot"></i> AI Prompts</a>
+        <a onclick="showCategory('coding')"><i class="fas fa-code"></i> Developer Coding</a>
+        <a id="ytLinkSidebar" target="_blank"><i class="fab fa-youtube"></i> YouTube Channel</a>
+        <a id="fbLink" target="_blank"><i class="fab fa-facebook"></i> Facebook Page</a>
+        <a id="tgLinkSidebar" target="_blank"><i class="fab fa-telegram"></i> Telegram Group</a>
+    </div>
+
+    <header>
+        <div class="header-left">
+            <div class="menu-icon" onclick="toggleNav()"><i class="fas fa-bars-staggered"></i></div>
+            <div class="logo" onclick="location.reload()">BOTVERSE</div>
+        </div>
+        <div class="search-wrapper" id="searchWrapper">
+            <div class="search-input-box"><input class="search-input" id="searchInput" oninput="handleYoutubeSearch(this.value)" placeholder="Search anything..." type="text"></div>
+            <button class="search-btn" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </header>
+
+    <div class="slider-container" id="mainSlider">
+        <div class="slides" id="slideTrack">
+            <div class="slide"><img id="slideImg1" src="https://via.placeholder.com/1200x500?text=Banner+1"></div>
+            <div class="slide"><img id="slideImg2" src="https://via.placeholder.com/1200x500?text=Banner+2"></div>
+            <div class="slide"><img id="slideImg3" src="https://via.placeholder.com/1200x500?text=Banner+3"></div>
+        </div>
+    </div>
+
+    <div class="main-wrapper" id="mainWrapper">
+        <div id="app-detail-view"></div>
+        <div id="prompt-detail-view"></div>
+        <div id="code-detail-view"></div>
+        <div id="preset-detail-view"></div>
+        <div id="video-detail-view"></div>
+        
+        <div id="firebase-home"></div>
+        <div class="post-grid" id="firebase-videos" style="display:none;"></div>
+        <div id="firebase-prompts" style="display:none;"></div>
+        <div class="post-grid" id="firebase-presets" style="display:none;"></div>
+        <div id="firebase-coding" style="display:none;"></div>
+        <div class="post-grid" id="firebase-apps" style="display:none;"></div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">BOTVERSE</div>
+        <p>Discover the best tools and templates for your creativity.</p>
+        <div>Copyright © 2026 | All Rights Reserved</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
